@@ -1,9 +1,5 @@
-# Change Log
+## Change Log
 
-All notable changes to the "normtostandardjapanchar" extension will be documented in this file.
+### 0.4.1
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- 初公開
