@@ -1,0 +1,55 @@
+{
+  "publisher": "komiyamma",
+  "name": "normtostandardjapanchar",
+  "displayName": "NormToStandardJapanChar",
+  "description": "Normalize to standard japanese characters",
+  "version": "0.3.0",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "keywords": [
+    "normalize",
+    "japanese"
+  ],
+  "license": "MIT",
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "normtostandardjapanchar.normalize",
+        "title": "Normalize to standard japanese characters"
+      }
+    ]
+  },
+  "homepage": "https://komiyamma.net/?page=page-vscode-extension-norm-to-standard-japan-char",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/komiyamma/vscode_extension_norm_to_standard_japan_char"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.6.3"
+  }
+}
