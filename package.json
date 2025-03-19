@@ -3,14 +3,15 @@
   "name": "normtostandardjapanchar",
   "displayName": "NormToStandardJapanChar",
   "description": "Normalize to standard japanese characters",
-  "version": "0.4.3",
+  "version": "0.4.5",
   "engines": {
     "vscode": "^1.98.0"
   },
   "categories": [
-    "Other"
+    "Formatters"
   ],
   "activationEvents": [],
+  "icon": "resources/icons/logo.png",
   "keywords": [
     "normalize",
     "japanese"
