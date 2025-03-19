@@ -30,6 +30,11 @@ function normToStandardJapanChar() {
 	const normalizedTextArray = textArray.map(normalizeLine);
 	const joinedText = normalizedTextArray.join('\n');
 
+	// 置換前後で変化がない場合は何もしない
+	if (text === joinedText) {
+		return;
+	}
+
 	// 選択している時は、その範囲をjonedTextで置き換える
 	if (getSelectedText()) {
 		editor.edit(editBuilder => {

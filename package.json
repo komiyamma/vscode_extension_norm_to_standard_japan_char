@@ -3,7 +3,7 @@
   "name": "normtostandardjapanchar",
   "displayName": "NormToStandardJapanChar",
   "description": "Normalize to standard japanese characters",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "engines": {
     "vscode": "^1.98.0"
   },
