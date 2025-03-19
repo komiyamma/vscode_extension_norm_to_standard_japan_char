@@ -132,14 +132,12 @@ function normalizeChar(char) {
 }
 // SJIS に変換可能かどうかを判定
 function canConvertSJIS(text) {
-    return true;
     try {
         // CP932に変換
-        const cp932Buffer = iconv.encode(text, 'cp932');
-        // CP932からUTF-16LEに変換
-        const utf16leString = iconv.decode(cp932Buffer, 'utf16le');
+        const cp932Buffer = iconv.encode(text, 'shift_jis');
+        const utf16String = iconv.decode(cp932Buffer, 'shift_jis');
         // 元のテキストと再変換したテキストを比較
-        return text === utf16leString;
+        return text === utf16String;
     }
     catch (error) {
         // CP932で表現できない文字が含まれている場合、変換に失敗する
