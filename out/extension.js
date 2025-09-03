@@ -35,6 +35,9 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
+exports.normalizeLine = normalizeLine;
+exports.normalizeChar = normalizeChar;
+exports.canConvertSJIS = canConvertSJIS;
 const vscode = __importStar(require("vscode"));
 const iconv = require('iconv-lite');
 function activate(context) {
@@ -71,7 +74,8 @@ function normToStandardJapanChar() {
     // 選択していない時は、全体をjoinedTextで置き換える
     else {
         editor.edit(editBuilder => {
-            editBuilder.replace(new vscode.Range(new vscode.Position(0, 0), new vscode.Position(editor.document.lineCount, 0)), joinedText);
+            const endPosition = editor.document.lineAt(editor.document.lineCount - 1).range.end;
+            editBuilder.replace(new vscode.Range(new vscode.Position(0, 0), endPosition), joinedText);
         });
     }
 }
@@ -103,16 +107,21 @@ function* graphemeIterator(text) {
 }
 // 行を正規化
 function normalizeLine(lineText) {
-    // SJIS に変換可能な文字列はそのまま返す
+    // SJISに変換可能ならそのまま返す（高速）
     if (canConvertSJIS(lineText)) {
         return lineText;
     }
-    // 行のテキストを１文字ずつカスタム正規化
-    let normalizedLineText = '';
+    // SJIS変換不可能な部分だけ正規化
+    let result = '';
     for (const grapheme of graphemeIterator(lineText)) {
-        normalizedLineText += normalizeChar(grapheme);
+        if (canConvertSJIS(grapheme)) {
+            result += grapheme;
+        }
+        else {
+            result += normalizeChar(grapheme);
+        }
     }
-    return normalizedLineText;
+    return result;
 }
 // １文字を正規化
 function normalizeChar(char) {

@@ -1,6 +1,6 @@
 # NormToStandardJapanChar
 
-[![NormToStandardJapanChar v0.4.6](https://img.shields.io/badge/NormToStandardJapanChar-v0.4.6-6479ff.svg)](https://github.com/komiyamma/vscode_extension_norm_to_standard_japan_char/releases)
+![NormToStandardJapanChar v0.4.7](https://img.shields.io/badge/NormToStandardJapanChar-v0.4.7-6479ff.svg)](https://github.com/komiyamma/vscode_extension_norm_to_standard_japan_char/releases)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 Unicode文章でよく発生する「文字のゆれ(形が近い異字体等)」を「標準的な文字」へと正規化する機能を提供します。  
@@ -14,7 +14,7 @@ NFCやNFKCで一括変換といった単純なものではなく、以下のよ�
 - 文字がsjisの文字に収まっていない場合、「NFC」でUnicode正規化を試みます。  
 - この変換の結果、「何らかの文字変換が行われた」場合、それを採用します。  
 - 上では文字の変化が起きなかった場合、該当文字を「NFKC」でUnicode正規化を試みます。  
-- この変換の結果、「元の文字とバイト数が同じか、それ以下の場合のみ」それを採用します。  
+    - この変換の結果、「元の文字と文字長（UTF-16コードユニット数）が同じか、それ以下の場合のみ」それを採用します。  
   
 以上の形で「文字の揺れ」を解消しています。
 
@@ -29,6 +29,12 @@ NFCやNFKCで一括変換といった単純なものではなく、以下のよ�
 [NormToStandardJapanChar](https://marketplace.visualstudio.com/items?itemName=komiyamma.normtostandardjapanchar) で公開されています。
 
 ## Change Log
+
+### 0.4.7
+
+- テストケース追加（NFC変換でSJIS内に収まる例など）
+- 仕様説明の明確化（SJIS優先、文字長基準、巨大ファイルは対象外）
+- ドキュメントと実装の乖離解消
 
 ### 0.4.6
 
