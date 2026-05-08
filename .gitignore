@@ -254,3 +254,8 @@ paket-files/
 # Visual Studio Code files
 .vscode/
 .vscode-test/
+
+
+
+package-ver-up-promp*.*
+*.vsix
