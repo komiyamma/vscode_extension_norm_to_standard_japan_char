@@ -1,5 +1,11 @@
 ## Change Log
 
+### 0.4.8
+
+- Code tidy and repository housekeeping: updated .gitignore and .vscodeignore.
+- Added several logo image assets to the logo/ directory.
+- Updated extension icon at resources/icons/logo.png (local modification present).
+
 ### 0.4.6
 
 - README の文言修正
