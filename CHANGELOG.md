@@ -1,10 +1,10 @@
-## Change Log
+## 変更履歴
 
 ### 0.4.8
 
-- Code tidy and repository housekeeping: updated .gitignore and .vscodeignore.
-- Added several logo image assets to the logo/ directory.
-- Updated extension icon at resources/icons/logo.png (local modification present).
+- コードの整理およびリポジトリのメンテナンス: `.gitignore` と `.vscodeignore` を更新しました。
+- 複数のロゴ画像を `logo/` ディレクトリに追加しました。
+- 拡張機能のアイコン（resources/icons/logo.png）を更新しました（ローカルでの変更あり）。
 
 ### 0.4.6
 
